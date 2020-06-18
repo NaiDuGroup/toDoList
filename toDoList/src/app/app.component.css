@@ -1,3 +1,9 @@
+.col-9 {
+    background-color:#f2f2f2;
+    margin-top: 100px;
+    border-style: solid;
+}
+
 .mainBody {
     background-color: silver;
     height: 752px;
