@@ -1,5 +1,6 @@
-body {
-    background-color: cadetblue;
+.mainBody {
+    background-color: silver;
+    height: 752px;
 }
 
 .name {
