@@ -1,0 +1,11 @@
+body {
+    background-color: cadetblue;
+}
+
+.name {
+    text-align: center;
+    font-size: 82px;
+    color: tomato;
+    opacity: 70%;
+    font-family: fantasy;
+}

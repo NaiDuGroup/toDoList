@@ -1,0 +1,20 @@
+<body>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-9">
+      <div class="name">
+        <p>Todos</p>
+      </div>
+      <app-input></app-input>
+      <br>
+      <div *ngFor="let task of todoService.getTasks() | async">
+        <app-task [task]="task"></app-task>
+        <hr>
+      </div>
+      <div *ngIf="(todoService.getAmountOfTasks() | async) as amount">
+        <app-footer [tasksAmount]="amount"></app-footer>
+      </div>   
+    </div>
+  </div>
+</div>
+</body>
