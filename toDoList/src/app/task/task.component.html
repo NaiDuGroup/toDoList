@@ -1,4 +1,5 @@
 <input type="checkbox"
+       class="check"
        [checked]="task.isDone"
        (click)="toDoService.updateTask(task.id)" >&nbsp;
 <span [ngClass]=" task.isDone ? 'line-text' : 'normal-text'">

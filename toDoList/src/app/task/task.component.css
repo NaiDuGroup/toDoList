@@ -1,7 +1,15 @@
 .normal-text {
     text-decoration: none;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 24px
 }
 .line-text {
     text-decoration: line-through;
     opacity: 50%;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 24px
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
 }
