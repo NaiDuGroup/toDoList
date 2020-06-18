@@ -7,13 +7,25 @@ import { TodoService } from '../service/todo.service';
 })
 export class InputComponent {
 
-  name: string;
+  name: string = '';
 
   constructor(private todoService: TodoService) { }
 
   addTask() {
+    if (this.name != '' && !this.checkingForSpaces()) {
     this.todoService.addTask(this.name);
     this.name = '';
+    }
+  }
+
+  public checkingForSpaces() : boolean {
+    let numberOfSpaces = 0;
+    for(let i = 0; i < this.name.length; i++) {
+      if (this.name[i] == ' ') {
+        numberOfSpaces++;
+      }
+    }
+    return this.name.length == numberOfSpaces;
   }
 
 }
