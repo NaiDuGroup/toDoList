@@ -1,12 +1,11 @@
-
-   
 <input type="checkbox"
        [checked]="task.isDone"
        (click)="toDoService.updateTask(task.id)" >
 <span [ngClass]=" task.isDone ? 'line-text' : 'normal-text'">
        {{ task.name }}
 </span>
-<button style="position: absolute; right: 15px;"
-        (click)="toDoService.removeTask(task.id)">X</button>
+<button type="button" class="close" aria-label="Close" (click)="toDoService.removeTask(task.id)">
+    <span aria-hidden="true">×</span>
+</button>
 
 
