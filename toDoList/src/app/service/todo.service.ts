@@ -17,7 +17,7 @@ export class TodoService {
 
 
   constructor() {
-    this.tasks = JSON.parse(localStorage.getItem(this.localStorageKey));
+    this.tasks = JSON.parse(localStorage.getItem(this.localStorageKey)) || [];
     this.index = this.tasks.length + 1;
 
     this.$tasks.next(this.tasks);
