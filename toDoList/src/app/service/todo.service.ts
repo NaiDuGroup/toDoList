@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { TaskItem } from '../model/task-item';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { v4 as uuidv4} from 'uuid';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-
-  index: number = 0;
   localStorageKey = 'key';
 
   $tasks: BehaviorSubject<TaskItem[]>;
@@ -18,7 +17,6 @@ export class TodoService {
 
   constructor() {
     this.tasks = JSON.parse(localStorage.getItem(this.localStorageKey)) || [];
-    this.index = this.tasks.length + 1;
 
     this.$tasks = new BehaviorSubject<TaskItem[]>(this.tasks);
     console.log(this.$tasks);
@@ -30,14 +28,14 @@ export class TodoService {
   }
 
   public addTask(name: string) { // CREATE
-      this.tasks.push(new TaskItem(this.index, name));
-      this.index++;
+      this.tasks.push(new TaskItem(new uuidv4(), name));
       localStorage.setItem(this.localStorageKey,JSON.stringify(this.tasks));
       this.$tasks.next(this.tasks);
       this.$amountOfTasks.next(this.tasks.length);
   }
 
   public getTasks(): Observable<TaskItem[]> { // READ
+    console.log(this.tasks);
     return  this.$tasks.asObservable();
   }
 
