@@ -12,20 +12,10 @@ export class InputComponent {
   constructor(private todoService: TodoService) { }
 
   addTask() {
-    if (this.name != '' && !this.checkingForSpaces()) {
-    this.todoService.addTask(this.name);
+    if (this.name != '') {
+    this.todoService.addTask(this.name.trim());
     this.name = '';
     }
-  }
-
-  public checkingForSpaces() : boolean {
-    let numberOfSpaces = 0;
-    for(let i = 0; i < this.name.length; i++) {
-      if (this.name[i] == ' ') {
-        numberOfSpaces++;
-      }
-    }
-    return this.name.length == numberOfSpaces;
   }
 
 }
