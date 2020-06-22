@@ -12,8 +12,8 @@ export class InputComponent {
   constructor(private todoService: TodoService) { }
 
   addTask() {
-    if (this.name != '') {
-    this.todoService.addTask(this.name.trim());
+    if (this.name.trim() != '') {
+    this.todoService.addTask(this.name);
     this.name = '';
     }
   }

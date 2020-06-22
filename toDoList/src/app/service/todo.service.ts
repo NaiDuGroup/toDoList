@@ -10,18 +10,23 @@ export class TodoService {
   index: number = 0;
   localStorageKey = 'key';
 
-  $tasks = new BehaviorSubject<TaskItem[]>([]);
+  $tasks: BehaviorSubject<TaskItem[]>;
   tasks: TaskItem[] = [];
 
-  $amountOfTasks = new BehaviorSubject<number>(0);
+  $amountOfTasks: BehaviorSubject<number>;
 
 
   constructor() {
     this.tasks = JSON.parse(localStorage.getItem(this.localStorageKey)) || [];
     this.index = this.tasks.length + 1;
 
-    this.$tasks.next(this.tasks);
-    this.$amountOfTasks.next(this.tasks.length);
+    this.$tasks = new BehaviorSubject<TaskItem[]>(this.tasks);
+    console.log(this.$tasks);
+    //this.$tasks.next(this.tasks);
+
+    this.$amountOfTasks = new BehaviorSubject<number>(this.tasks.length);
+    console.log('length: ', this.$amountOfTasks);
+    //this.$amountOfTasks.next(this.tasks.length);
   }
 
   public addTask(name: string) { // CREATE
@@ -33,7 +38,7 @@ export class TodoService {
   }
 
   public getTasks(): Observable<TaskItem[]> { // READ
-   return  this.$tasks.asObservable();
+    return  this.$tasks.asObservable();
   }
 
   public updateTask(id: number) { // UPDATE
