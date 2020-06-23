@@ -1,18 +1,22 @@
 .col-9 {
     background-color:#f2f2f2;
-    margin-top: 100px;
-    border-style: solid;
+
+}
+
+.bodyClass {
+    background-color: white;
+    box-shadow: -1px 5px 14px 1px rgba(112, 105, 105, 0.75);
 }
 
 .mainBody {
-    background-color: #d9d9d9;
-    height: 752px;
+    background-color: #f2f2f2;
+    min-height: 752px;
 }
 
 .name {
     text-align: center;
-    font-size: 82px;
-    color: tomato;
+    font-size: 102px;
+    color: #cc4658;
     opacity: 70%;
-    font-family: fantasy;
+    font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

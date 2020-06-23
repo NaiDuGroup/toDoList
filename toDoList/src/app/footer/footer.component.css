@@ -1,3 +1,13 @@
 .footerClass {
-    font-family: fantasy;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(112, 105, 105, 0.75);
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    box-shadow: 0 1px 1px rgba(112, 105, 105, 0.75),
+	            0 8px 0 -3px white,
+	            0 9px 1px -3px rgba(112, 105, 105, 0.75),
+	            0 16px 0 -6px white,
+	            0 17px 2px -6px rgba(112, 105, 105, 0.75);
 }

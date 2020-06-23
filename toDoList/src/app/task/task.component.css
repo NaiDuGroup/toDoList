@@ -5,11 +5,62 @@
 }
 .line-text {
     text-decoration: line-through;
-    opacity: 50%;
+    opacity: 20%;
     font-family: 'Open Sans', sans-serif; 
     font-size: 24px
 }
 
-input[type=checkbox] {
-    transform: scale(1.5);
+.element {
+    padding-top: 10px;
+    padding-bottom: 10px;
+	font-size: 32px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.check {
+    margin-left: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 22px;
+    border: 1px solid lightgray;
+    background: none;
+    position: relative;
+    appearance: none;
+    outline: none;
+    margin-right: 8px;
+}
+
+.check:checked:after {
+    content: "✓";
+    color:green;
+    -webkit-text-stroke-width: 1px;
+    position: absolute;
+    font-size: 20px;
+    left: 6px;
+    top: 0px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+button.close {
+    margin-right: 10px;
+    display: none;
+}
+
+.element:hover button.close {
+    display: block;
+    color: rgba(255, 0, 0, .6);
+}
+
+
+
+
+
+
+
