@@ -29,7 +29,6 @@ export class TodoService {
   }
 
   public getTasks(): Observable<TaskItem[]> { // READ
-    console.log(this.tasks);
     return  this.$tasks.asObservable();
   }
 
